@@ -19,12 +19,12 @@ export default function Home() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
-      <nav style={{ padding: '20px 28px', borderBottom: '1px solid #111', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+     <nav style={{ padding: '20px 28px', borderBottom: '1px solid #111', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
   <span style={{ fontSize: '20px', fontWeight: '700', letterSpacing: '2px', color: '#fff' }}>
     Todo<span style={{ color: '#16a34a' }}>Verdes</span>
   </span>
   <div style={{ display: 'flex', gap: '10px' }}>
-    <a href="/registro" style={{ background: 'transparent', border: '1px solid #222', color: '#888', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none' }}>
+    <a href="/login" style={{ background: 'transparent', border: '1px solid #222', color: '#888', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none' }}>
       Iniciar sesión
     </a>
     <a href="/registro" style={{ background: '#fff', border: 'none', color: '#080808', borderRadius: '8px', padding: '8px 16px', fontSize: '13px', fontWeight: '700', cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none' }}>
