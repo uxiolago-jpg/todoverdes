@@ -15,7 +15,8 @@ export default function Login() {
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     setLoading(false)
     if (error) return setMensaje('Email o contraseña incorrectos')
-    window.location.href = '/perfil'
+    const { data } = await supabase.from('usuarios').select('is_admin').eq('id', (await supabase.auth.getUser()).data.user.id).single()
+window.location.href = data?.is_admin ? '/admin' : '/perfil'
   }
 
   const inputStyle = {
