@@ -1,8 +1,20 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { supabase } from './lib/supabase'
 
 export default function Home() {
   const [hovered, setHovered] = useState(false)
+  const [pronostico, setPronostico] = useState(null)
+
+  useEffect(() => {
+    const hoy = new Date().toISOString().split('T')[0]
+    supabase
+      .from('pronosticos')
+      .select('*')
+      .eq('fecha', hoy)
+      .single()
+      .then(({ data }) => setPronostico(data))
+  }, [])
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -23,9 +35,21 @@ export default function Home() {
           Solo datos.<br />Estadística pura.
         </h1>
 
-        <p style={{ fontSize: '14px', color: '#444', marginBottom: '56px' }}>
+        <p style={{ fontSize: '14px', color: '#444', marginBottom: '40px' }}>
           Sin magia. Sin humo. Solo números.
         </p>
+
+        {pronostico ? (
+          <div style={{ background: '#111', border: '1px solid #1a1a1a', borderRadius: '12px', padding: '20px 28px', marginBottom: '40px', maxWidth: '400px', width: '100%' }}>
+            <p style={{ fontSize: '11px', color: '#16a34a', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>{pronostico.liga}</p>
+            <p style={{ fontSize: '18px', fontWeight: '700', color: '#fff', marginBottom: '4px' }}>{pronostico.partido}</p>
+            <p style={{ fontSize: '13px', color: '#555' }}>Hoy · {pronostico.hora}</p>
+          </div>
+        ) : (
+          <div style={{ background: '#111', border: '1px solid #1a1a1a', borderRadius: '12px', padding: '20px 28px', marginBottom: '40px', maxWidth: '400px', width: '100%' }}>
+            <p style={{ fontSize: '14px', color: '#555' }}>Pronóstico disponible cada día a las 10h</p>
+          </div>
+        )}
 
         <button
           onMouseEnter={() => setHovered(true)}
