@@ -106,33 +106,35 @@ export default function Home() {
           {codigoValido === true && <p style={{ fontSize: '12px', color: '#16a34a', marginTop: '8px' }}>Código aplicado — 0,50€ de descuento</p>}
           {codigoValido === false && <p style={{ fontSize: '12px', color: '#ef4444', marginTop: '8px' }}>Código no válido</p>}
         </div>
-<a href="https://uxiolago.gumroad.com/l/wmuzl" style={{ textDecoration: 'none' }}></a>
-        <button
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          style={{
-            background: '#ffffff',
-            color: '#080808',
-            border: 'none',
-            borderRadius: '14px',
-            padding: '22px 56px',
-            fontSize: '17px',
-            fontWeight: '700',
-            cursor: 'pointer',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '12px',
-            fontFamily: 'inherit',
-            transform: hovered ? 'scale(1.04)' : 'scale(1)',
-            opacity: hovered ? '0.9' : '1',
-            transition: 'transform 0.15s, opacity 0.15s',
-          }}
-        >
-          Conseguir pronóstico
-          <span style={{ background: '#1a1a1a', color: '#16a34a', fontSize: '15px', fontWeight: '700', padding: '4px 10px', borderRadius: '6px' }}>
-            {precio}
-          </span>
-        </button>
+
+        <a href="https://uxiolago.gumroad.com/l/wmuzl" style={{ textDecoration: 'none' }}>
+          <button
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+              background: '#ffffff',
+              color: '#080808',
+              border: 'none',
+              borderRadius: '14px',
+              padding: '22px 56px',
+              fontSize: '17px',
+              fontWeight: '700',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '12px',
+              fontFamily: 'inherit',
+              transform: hovered ? 'scale(1.04)' : 'scale(1)',
+              opacity: hovered ? '0.9' : '1',
+              transition: 'transform 0.15s, opacity 0.15s',
+            }}
+          >
+            Conseguir pronóstico
+            <span style={{ background: '#1a1a1a', color: '#16a34a', fontSize: '15px', fontWeight: '700', padding: '4px 10px', borderRadius: '6px' }}>
+              {precio}
+            </span>
+          </button>
+        </a>
 
         <p style={{ fontSize: '11px', color: '#2a2a2a', marginTop: '48px' }}>
           Apuesta con responsabilidad. Nada está garantizado.
