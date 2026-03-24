@@ -106,7 +106,7 @@ export default function Home() {
           {codigoValido === true && <p style={{ fontSize: '12px', color: '#16a34a', marginTop: '8px' }}>Código aplicado — 0,50€ de descuento</p>}
           {codigoValido === false && <p style={{ fontSize: '12px', color: '#ef4444', marginTop: '8px' }}>Código no válido</p>}
         </div>
-
+<a href="https://uxiolago.gumroad.com/l/wmuzl" style={{ textDecoration: 'none' }}></a>
         <button
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
