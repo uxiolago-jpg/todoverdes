@@ -107,7 +107,7 @@ export default function Home() {
           {codigoValido === false && <p style={{ fontSize: '12px', color: '#ef4444', marginTop: '8px' }}>Código no válido</p>}
         </div>
 
-        <a href="https://uxiolago.gumroad.com/l/wmuzl" style={{ textDecoration: 'none' }}>
+        <a href="https://todoverdes.gumroad.com/l/wmuzl" style={{ textDecoration: 'none' }}>
           <button
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
